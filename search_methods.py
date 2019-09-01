@@ -1,8 +1,10 @@
 def sequential_search(data, value):
-    for target in data:
-        if target[0] == value:
-            print(target)
-            break
+    size = len(data)
+    for index in range(size):
+        if data[index][0] == value:
+            return index
+
+    return -1
 
 
 def create_index_list(data, index_size):
@@ -17,23 +19,20 @@ def create_index_list(data, index_size):
 def indexed_sequential_search(data, indexed_list, value):
     if value < data[0][0]:
         print("Valor não encontrado")
+        return -1
         exit(0)
 
     else:
 
         for indexed in range(len(indexed_list)):
             if data[indexed_list[indexed]][0] == value:
-                print(indexed_list[indexed])
-                break
+                return indexed_list[indexed]
             elif data[indexed_list[indexed]][0] > value:
                 for index in range(indexed_list[indexed - 1], indexed_list[indexed]):
                     if data[index][0] == value:
-                        print(index)
-                        break
+                        return index
                     elif data[index][0] > value:
-                        print("Valor nao encontrado")
-                        break
-                break
+                        return -1
 
 
 def interpolation_search(data, value):
