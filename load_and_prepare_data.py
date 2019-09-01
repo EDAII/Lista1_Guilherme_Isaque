@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import json
 from operator import itemgetter
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 # load the iris dataset
 # separate the data from the target attributes
 # normalize the data attributes
