@@ -1,3 +1,4 @@
+# Busca sequencial
 def sequential_search(data, value):
     size = len(data)
     for index in range(size):
@@ -6,7 +7,7 @@ def sequential_search(data, value):
 
     return -1
 
-
+# Cria lista de index
 def create_index_list(data, index_size):
     indexed_list = []
 
@@ -15,15 +16,13 @@ def create_index_list(data, index_size):
 
     return indexed_list
 
-
+# Busca sequencial indexada
 def indexed_sequential_search(data, indexed_list, value):
     if value < data[0][0]:
         print("Valor não encontrado")
         return -1
         exit(0)
-
     else:
-
         for indexed in range(len(indexed_list)):
             if data[indexed_list[indexed]][0] == value:
                 return indexed_list[indexed]
@@ -34,12 +33,11 @@ def indexed_sequential_search(data, indexed_list, value):
                     elif data[index][0] > value:
                         return -1
 
-
+# Busca por interpolação
 def interpolation_search(data, value):
     start = 0
     end = len(data)-1
     flag = 0
-
     while(start <= end and value >= data[start][0] and value <= data[end][0]):
         if(start == end):
             if data[start][0] == value:
@@ -77,8 +75,6 @@ def binary_search(data, value):
     return -1
 
 # busca binária recursiva
-
-
 def recursive_binary_search(data, left, right, value):
     if right < left:
         return -1
