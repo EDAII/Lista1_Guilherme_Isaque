@@ -23,6 +23,4 @@ def load_and_prepare_data(file_path=None):
     data = datastore.values.tolist()
     sortedlist = sorted(data, key=itemgetter(0))
 
-    numbers = [row[0] for row in data]
-
     return sortedlist
